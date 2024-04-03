@@ -12,6 +12,7 @@ describe("Test suites for Automation Web Store contact us form", () => {
     cy.get("#ContactUsFrm_enquiry").type("Do you provide free shipping?");
     cy.get("button[title='Submit']").click();
     // Check if form is successfully submitted
+    cy.url().should("include", "contact/success");
     cy.get(".maintext").find("i").should("have.class", "fa fa-thumbs-up");
   });
 });
