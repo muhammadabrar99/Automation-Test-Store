@@ -3,6 +3,7 @@
 describe("Test suites for Automation Web Store contact us form", () => {
   it("Should be able to submit a successful submission via contact us form", () => {
     cy.visit("https://automationteststore.com/");
+    cy.document().should("have.property", "charset").and("eq", "UTF-8");
 
     cy.get("a[href$='contact']").click();
     // confirm if redirected to the correct page
